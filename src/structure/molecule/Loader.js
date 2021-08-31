@@ -1,19 +1,23 @@
-/* eslint-disable prettier/prettier */
-// In App.js in a new project
 import React from 'react';
-import { View, Text, ActivityIndicator} from 'react-native';
-
-
+import {View, Text, ActivityIndicator, StyleSheet} from 'react-native';
 
 const Loading = ({message}) => (
-  <View style={{flexDirection:'column', alignItems:'center'}}>
-
+  <View style={styles.container}>
     <ActivityIndicator size="large" color="#0000ff" />
-    <Text style={{color:'#363636', fontWeight:'bold', fontSize:18}}>
-        {message}
-    </Text>
-
+    <Text style={styles.text}>{message}</Text>
   </View>
 );
+
+const styles = StyleSheet.create({
+  container: {
+    flexDirection: 'column',
+    alignItems: 'center',
+  },
+  text: {
+    color: '#363636',
+    fontWeight: 'bold',
+    fontSize: 18,
+  },
+});
 
 export default Loading;
